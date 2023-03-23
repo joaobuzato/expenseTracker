@@ -2,8 +2,6 @@ import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate'
 import Card from '../UI/Card'
 
-import { useState } from 'react'
-
 export default function ExpenseItem(props) {
     const expenseDate = props.expense.date
     const expenseTitle = props.expense.title

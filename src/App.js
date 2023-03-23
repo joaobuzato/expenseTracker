@@ -11,8 +11,7 @@ function App() {
   ]
   const [expenses, setExpenses] = useState(expenseList)
   const addExpenseHandler = expense => {
-    console.log("In App.js")
-    setExpenses((prevExpenses) => [...prevExpenses, expense])
+    setExpenses((prevExpenses) => [ expense, ...prevExpenses])
   }
   
   return (
