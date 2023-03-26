@@ -14,6 +14,8 @@ function App() {
     setExpenses((prevExpenses) => [ expense, ...prevExpenses])
   }
   
+
+  
   return (
     <>
     <NewExpense onAddExpense={addExpenseHandler}></NewExpense>

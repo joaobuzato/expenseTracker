@@ -13,6 +13,7 @@ const NewExpense = (props) => {
             id: (Math.random() *1000).toString()
         };
         props.onAddExpense(expenseData)
+        setIsOpen(wasOpen => !wasOpen)
     }
 
     let newExpenseSection

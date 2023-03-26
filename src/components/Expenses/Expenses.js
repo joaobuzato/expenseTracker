@@ -9,14 +9,10 @@ export default function Expenses(props) {
 
     const [filteredYear, setFilteredYear] = useState('2023')
 
-    const filteredExpenses = props.expenses.filter(expense => expense.date.getFullYear().toString() === filteredYear )
+    const filteredExpenses = props.expenses.filter(expense => new Date(expense.date).getFullYear().toString() === filteredYear )
     const filterHandler = (year) => {
         setFilteredYear(year) 
     }
-
-    
-
-
     return (
         <Card className="expenses">
             <ExpensesFilter selectedYear={filteredYear} onSelect={filterHandler}/>
