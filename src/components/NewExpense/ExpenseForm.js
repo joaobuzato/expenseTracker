@@ -46,6 +46,9 @@ export default function ExpenseForm(props) {
         setDate('')
 
     }
+    const cancelHandler = () => {
+        props.onCancel()
+    }
     return <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
@@ -62,6 +65,7 @@ export default function ExpenseForm(props) {
             </div>
             <div className="new-expense__actions">
                 <button type="submit">Add Expense</button>
+                <button onClick={cancelHandler}>Cancel</button>
             </div>
         </div>
     </form>

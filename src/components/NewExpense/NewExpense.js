@@ -1,7 +1,12 @@
 import "./NewExpense.css"
 import ExpenseForm from "./ExpenseForm"
+import { useState } from "react"
 const NewExpense = (props) => {
+    const [isOpen, setIsOpen] = useState(false)
 
+    function newExpenseClickHandler(){
+        setIsOpen(wasOpen => !wasOpen)
+    }
     const saveHandler = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
@@ -9,8 +14,16 @@ const NewExpense = (props) => {
         };
         props.onAddExpense(expenseData)
     }
+
+    let newExpenseSection
+    if(!isOpen){
+      newExpenseSection = (<button onClick={newExpenseClickHandler}>Add New Expense</button>)
+    } else {
+      newExpenseSection = (<ExpenseForm onSaveExpenseData={saveHandler} onCancel={newExpenseClickHandler}></ExpenseForm>)
+    }
+    
     return <div className="new-expense">
-        <ExpenseForm onSaveExpenseData={saveHandler}></ExpenseForm>
+        {newExpenseSection}
     </div>
 }
 export default NewExpense
