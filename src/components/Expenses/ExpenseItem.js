@@ -8,7 +8,8 @@ export default function ExpenseItem(props) {
     const expenseAmout = props.expense.amount
 
     return (
-        <Card className="expense-item">
+        <li>
+            <Card className="expense-item">
             <ExpenseDate date={expenseDate} />
             <div className="expense-item__description">
                 <h2>{expenseTitle}</h2>
@@ -16,5 +17,6 @@ export default function ExpenseItem(props) {
             </div>
             
         </ Card>
+        </li>
     );
 }
